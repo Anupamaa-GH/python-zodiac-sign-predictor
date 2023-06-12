@@ -1,0 +1,58 @@
+#zodiac sign predictor
+# user have to input their date of birth with that system will generate zodiac signs
+
+
+
+
+from datetime import date
+
+datetime = [
+    "Aries     March 21 - April 19    The Ram",
+    "Taurus    April 20 - May 20      The Bull",
+    "Gemini    May 21 - June 20       The Twins",
+    "Cancer    June 21 - July 22      The Crab",
+    "Leo       July 23 - August 22    The Lion",
+    "Virgo     August 23 - September 22   The Virgin",
+    "Libra     September 23 - October 22   The Scales",
+    "Scorpio   October 23 - November 21    The Scorpion",
+    "Sagittarius   November 22 - December 21    The Archer",
+    "Capricorn    December 22 - January 19    The Goat",
+    "Aquarius     January 20 - February 18   The Water Bearer",
+    "Pisces     February 19 - March 20    The Fishes"
+]
+
+year = input("What's your year of birth? [ex: 1992] ")
+month = input("What's your month of birth? [ex: 10] ")
+day = input("What's your day of birth? [ex: 25] ")
+print('Your Date of Birth is ', (day + "/" + month + "/" + year))
+
+today_day = date.today()
+age = today_day.year - int(year)
+print('You are', age, 'years old')
+
+if ((int(month) == 12 and int(day) >= 22) or (int(month) == 1 and int(day) <= 19)):
+    sign = "Capricorn"
+elif ((int(month) == 1 and int(day) >= 20) or (int(month) == 2 and int(day) <= 18)):
+    sign = "Aquarius"
+elif ((int(month) == 2 and int(day) >= 19) or (int(month) == 3 and int(day) <= 20)):
+    sign = "Pisces"
+elif ((int(month) == 3 and int(day) >= 21) or (int(month) == 4 and int(day) <= 19)):
+    sign = "Aries"
+elif ((int(month) == 4 and int(day) >= 20) or (int(month) == 5 and int(day) <= 20)):
+    sign = "Taurus"
+elif ((int(month) == 5 and int(day) >= 21) or (int(month) == 6 and int(day) <= 20)):
+    sign = "Gemini"
+elif ((int(month) == 6 and int(day) >= 21) or (int(month) == 7 and int(day) <= 22)):
+    sign = "Cancer"
+elif ((int(month) == 7 and int(day) >= 23) or (int(month) == 8 and int(day) <= 22)):
+    sign = "Leo"
+elif ((int(month) == 8 and int(day) >= 23) or (int(month) == 9 and int(day) <= 22)):
+    sign = "Virgo"
+elif ((int(month) == 9 and int(day) >= 23) or (int(month) == 10 and int(day) <= 22)):
+    sign = "Libra"
+elif ((int(month) == 10 and int(day) >= 23) or (int(month) == 11 and int(day) <= 21)):
+    sign = "Scorpio"
+elif ((int(month) == 11 and int(day) >= 22) or (int(month) == 12 and int(day) <= 21)):
+    sign = "Sagittarius"
+
+print("Your Zodiac Sign is", sign)
